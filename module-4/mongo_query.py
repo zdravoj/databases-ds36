@@ -1,11 +1,11 @@
 import pymongo
+from os import getenv
 
-# connection variables
-# username and password removed for security
-USER = '#username'
-PASSWORD = '#password'
-DBNAME = 'rpg_data'
-COLLECTION = 'characters'
+# MongoDB connection variables
+USER = getenv('MONGO_USER')
+PASSWORD = getenv('MONGO_PASSWORD')
+DBNAME = getenv('MONGO_DBNAME')
+COLLECTION = getenv('MONGO_COLLECTION')
 
 # connect to Mongo database and prepare collections variable
 client = pymongo.MongoClient(f'''mongodb+srv://{USER}:{PASSWORD}@ds36-aw.5yffm.mongodb.net/{DBNAME}?retryWrites=true&w=majority''')

@@ -1,12 +1,13 @@
 import psycopg2
 import sqlite3
 import queries as q
+from os import getenv
 
 # PostgreSQL Connection Credentials
-DBNAME = 'szexkcgl'
-USER = 'szexkcgl'
-PASSWORD = 'OxRDB5CzyPbzqXBGkvWtXJH3R7p3JLES'
-HOST = 'kashin.db.elephantsql.com'
+DBNAME = getenv('ELEPHANT_DBNAME')
+USER = getenv('ELEPHANT_USER')
+PASSWORD = getenv('ELEPHANT_PASSWORD')
+HOST = getenv('ELEPHANT_HOST')
 
 # Establish connection and cursor
 pg_conn = psycopg2.connect(dbname=DBNAME,

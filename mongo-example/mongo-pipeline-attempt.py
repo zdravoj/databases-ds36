@@ -3,10 +3,13 @@ import pymongo
 
 from itertools import groupby
 from collections import OrderedDict
+from os import getenv
 
-USER = 'austinjw'
-PASSWORD = 'VHDTrvyb5ht7jxAO'
-DBNAME = 'rpg_data'
+# MongoDB connection variables
+USER = getenv('MONGO_USER')
+PASSWORD = getenv('MONGO_PASSWORD')
+DBNAME = getenv('MONGO_DBNAME')
+COLLECTION = getenv('MONGO_COLLECTION')
 
 # creates MongoDB connection
 def create_mdb_conn(user, password, dbname, collection_name):

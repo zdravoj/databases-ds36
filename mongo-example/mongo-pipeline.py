@@ -1,9 +1,12 @@
 import pymongo
 import sqlite3
+from os import getenv
 
-USER = 'austinjw'
-PASSWORD = 'VHDTrvyb5ht7jxAO'
-DBNAME = 'rpg_data'
+# MongoDB connection variables
+USER = getenv('MONGO_USER')
+PASSWORD = getenv('MONGO_PASSWORD')
+DBNAME = getenv('MONGO_DBNAME')
+COLLECTION = getenv('MONGO_COLLECTION')
 
 # create connection to MongoDB database
 def create_mdb_connection(user, password, dbname):

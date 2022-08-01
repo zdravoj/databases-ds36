@@ -1,13 +1,13 @@
 import pandas as pd
 import psycopg2
+from os import getenv
 
 # PostgreSQL Connection Credentials
-# personal credentials removed for security
-# replace '#variable' with credentials
-DBNAME = '#dbname'
-USER = '#dbuser'
-PASSWORD = '#password'
-HOST = '#host'
+DBNAME = getenv('ELEPHANT_DBNAME')
+USER = getenv('ELEPHANT_USER')
+PASSWORD = getenv('ELEPHANT_PASSWORD')
+HOST = getenv('ELEPHANT_HOST')
+
 # Establish connection and cursor
 pg_conn = psycopg2.connect(dbname=DBNAME,
                            user=USER,

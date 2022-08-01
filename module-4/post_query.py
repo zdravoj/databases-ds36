@@ -1,11 +1,12 @@
 import psycopg2
 import titanic_queries
+from os import getenv
 
-# connection info
-DBNAME = 'szexkcgl'
-USER = 'szexkcgl'
-PASSWORD = 'OxRDB5CzyPbzqXBGkvWtXJH3R7p3JLES'
-HOST = 'kashin.db.elephantsql.com'
+# PostgreSQL connection variables
+DBNAME = getenv('ELEPHANT_DBNAME')
+USER = getenv('ELEPHANT_USER')
+PASSWORD = getenv('ELEPHANT_PASSWORD')
+HOST = getenv('ELEPHANT_HOST')
 
 # connection and cursor for database
 pg_conn = psycopg2.connect(dbname=DBNAME, 
